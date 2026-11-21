@@ -1,0 +1,31 @@
+$ ./pihole-test.sh 192.168.18.200 vm 20 | tee wynik-vm.txt
+=== Test Pi-hole: vm (192.168.18.200), 2026-11-09 14:35:06 ===
+
+[T1] Rozwiazywanie domen dozwolonych (pierwsze zapytanie)
+  agh.edu.pl                       OK    NOERROR   149.156.96.150     105 ms
+  wikipedia.org                    OK    NOERROR   185.15.59.224       30 ms
+  github.com                       OK    NOERROR   140.82.121.3        44 ms
+  debian.org                       OK    NOERROR   151.101.2.132       43 ms
+  kernel.org                       OK    NOERROR   172.105.4.254       69 ms
+  openwrt.org                      OK    NOERROR   64.226.122.113      25 ms
+  proxmox.com                      OK    NOERROR   45.144.208.39      371 ms
+  docker.com                       OK    NOERROR   23.185.0.4          25 ms
+  mozilla.org                      OK    NOERROR   35.190.14.201       22 ms
+  python.org                       OK    NOERROR   151.101.128.223     35 ms
+  Wynik: 10/10
+
+[T2] Blokowanie domen
+  ad.doubleclick.net               BLOK  NOERROR   0.0.0.0              4 ms
+  pagead2.googlesyndication.com    BLOK  NOERROR   0.0.0.0              3 ms
+  googleads.g.doubleclick.net      BLOK  NOERROR   0.0.0.0              2 ms
+  www.googleadservices.com         BLOK  NOERROR   0.0.0.0              8 ms
+  blokada-test.krt.lab             BLOK  NOERROR   0.0.0.0              2 ms
+  Wynik: 5/5
+
+[T3] Czas odpowiedzi [ms]
+  rodzaj zapytania                min  srednia    max      n
+  zimny cache                      22     76.9    371     10
+  cieply cache                      2      2.5      5    200
+  domena blokowana                  2      3.8      8      5
+
+=== Koniec testu: T1 10/10, T2 5/5 ===

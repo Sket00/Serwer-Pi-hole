@@ -1,0 +1,5 @@
+PS C:\Users\janra\Documents\KRT\DockerPiHole> docker stats --no-stream pihole
+CONTAINER ID   NAME     CPU %   MEM USAGE / LIMIT     MEM %   NET I/O          BLOCK I/O     PIDS
+b2cbe8cdf2ca   pihole   0.37%   12.91MiB / 7.381GiB   0.17%   1.03MB / 330kB   0B / 32.8MB   23
+PS C:\Users\janra\Documents\KRT\DockerPiHole> docker exec pihole du -sh /etc/pihole
+7.4M    /etc/pihole

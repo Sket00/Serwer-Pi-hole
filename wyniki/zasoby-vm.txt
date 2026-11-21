@@ -1,0 +1,17 @@
+user@PiHole:~$ sudo pihole deny blokada-test.krt.lab
+  [✓] Added 1 domain(s):
+    - blokada-test.krt.lab
+user@PiHole:~$ sudo systemctl restart pihole-FTL
+user@PiHole:~$ ps -o rss,cmd -C pihole-FTL
+  RSS CMD
+12564 /usr/bin/pihole-FTL -f
+user@PiHole:~$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:            3921        2252         752          13        1155        1668
+Swap:           1100           0        1100
+user@PiHole:~$ sudo du -sh /etc/pihole
+11M     /etc/pihole
+user@PiHole:~$ pihole -v
+Core version is v6.5 (Latest: v6.5)
+Web version is v6.6.1 (Latest: v6.6.1)
+FTL version is v6.8 (Latest: v6.8)

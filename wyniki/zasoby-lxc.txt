@@ -1,0 +1,17 @@
+root@pve:~# pct exec 100 -- /usr/local/bin/pihole deny blokada-test.krt.lab
+  [✓] Added 1 domain(s):
+    - blokada-test.krt.lab
+root@pve:~# pct exec 100 -- /usr/local/bin/pihole -v
+Core version is v6.5 (Latest: v6.5)
+Web version is v6.6.1 (Latest: v6.6.1)
+FTL version is v6.8 (Latest: v6.8)
+root@pve:~# pct exec 100 -- systemctl restart pihole-FTL
+root@pve:~# pct exec 100 -- ps -o rss,cmd -C pihole-FTL
+  RSS CMD
+11508 /usr/bin/pihole-FTL -f
+root@pve:~# pct exec 100 -- free -m
+               total        used        free      shared  buff/cache   available
+Mem:             512          34         304           2         174         477
+Swap:            512           0         512
+root@pve:~# pct exec 100 -- du -sh /etc/pihole
+11M     /etc/pihole
